@@ -1,0 +1,65 @@
+<div class="container " style="margin:100px;">
+  <h1 class="text-center">Dom Array Methods</h1>
+
+
+  <div class="container m-5 p-5 ">
+    <div class="row">
+      <div class="col-4 mt-5">
+        <button class="btn btn-lg btn-outline-primary p3" style="width: 100%;" (click)="display()" >Display</button>
+        <br><br>
+        <button class="btn btn-lg btn-outline-primary p3 " style="width: 100%;" (click)=" doubleMoney()" >Double Money</button>
+        <br><br>
+        <button class="btn btn-lg btn-outline-primary p3" style="width: 100%;" (click)="onlyMillionaires()">Show only Millionaires</button>
+        <br><br>
+        <button class="btn btn-lg btn-outline-primary p3 " style="width: 100%;" (click)="sortByRichest()" >Sort By Richest</button>
+        <br><br>
+        <button class="btn btn-lg btn-outline-primary p3" style="width: 100%;" (click)="calculateEntireWealth()">Calculate entire Wealth</button>
+        <br><br>
+      </div>
+
+      <div class="col-8">
+        <div *ngIf="Display==true">
+              <div class="row">
+                  <div class="col">
+                    <h1>Person</h1>
+                  </div>
+                  <div class="col ">
+                    <h1 style="text-align: end;">Wealth</h1>
+                  </div>
+                  <hr>
+              </div>
+
+
+            <div class="row">
+                <div class="col">
+                  <h4 *ngFor="let item of empArr">{{item.first_name}}</h4>
+                </div>
+
+                <div class="col ">
+                  <h4 style="text-align: end;" *ngFor="let item of empArr">${{item.wealth}}</h4>
+                </div>
+            </div>
+
+
+            <div *ngIf="show==true">
+              <hr>
+                <div class="row">
+                  <div class="col">
+                    <h1>Total Wealth:</h1>
+                  </div>
+
+                  <div class="col ">
+                    <h1 style="text-align: end;">${{sum}}</h1>
+                  </div>
+                </div>
+            </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
